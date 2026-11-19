@@ -10,21 +10,21 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Detección de malaria en glóbulos rojos\nValesska Sánchez – Lab 15"
+        android:text="Malaria Detection in Red Blood Cells\nValesska Sánchez – Lab 15"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Muestra sanguínea -->
+    <!-- Blood sample -->
     <ImageView
         android:id="@+id/imageToLabel"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="12dp"
         android:adjustViewBounds="true"
-        android:contentDescription="Muestra sanguínea"
+        android:contentDescription="Blood sample"
         android:scaleType="fitCenter"
         app:layout_constraintDimensionRatio="4:3"
         app:layout_constraintTop_toBottomOf="@id/txtTitle"
@@ -57,7 +57,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="◀ Atrás"
+            android:text="◀ Back"
             android:maxLines="1"
             android:textSize="13sp" />
 
@@ -76,23 +76,56 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Sig. ▶"
+            android:text="Next ▶"
             android:maxLines="1"
             android:textSize="13sp" />
     </LinearLayout>
 
-    <!-- Resultados -->
+    <!-- Camera / gallery: classify your own photos -->
+    <LinearLayout
+        android:id="@+id/buttonsSource"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/buttons"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <Button
+            android:id="@+id/btnCamera"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
+            android:text="📷 Camera"
+            android:maxLines="1"
+            android:textSize="13sp" />
+
+        <Button
+            android:id="@+id/btnGallery"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="🖼 Gallery"
+            android:maxLines="1"
+            android:textSize="13sp" />
+    </LinearLayout>
+
+    <!-- Results -->
     <TextView
         android:id="@+id/txtOutput"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="12dp"
         android:fontFamily="monospace"
-        android:text="Pulsa «Label Image»"
+        android:text="Press «Label Image»"
         android:textSize="16sp"
-        app:layout_constraintTop_toBottomOf="@id/buttons"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/buttonsSource"
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
