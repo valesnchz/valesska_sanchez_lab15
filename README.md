@@ -12,6 +12,8 @@ Workshop: *Mobile application for the recognition of medical images* (Lab 15) â€
 - **Test accuracy:** **0.9572** with `model.evaluate(test_data)` (required: > 0.70).
 - **Export:** `blood_cells_model.tflite` with metadata (labels), loaded from `app/src/main/assets/`.
 
+> The `.tflite` in the app comes from an earlier run of this same notebook. Each training run gives slightly different weights, so the notebook's single-image outputs can differ a little from the app's.
+
 | Test accuracy | Single-image prediction (`np.expand_dims` + `np.argmax`) |
 |---|---|
 | ![Test accuracy](docs/colab_test_accuracy.png) | ![Prediction](docs/colab_prediction.png) |
