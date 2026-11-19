@@ -12,7 +12,7 @@ Workshop: *Mobile application for the recognition of medical images* (Lab 15) �
 - **Test accuracy:** **0.9572** with `model.evaluate(test_data)` (required: > 0.70).
 - **Export:** `blood_cells_model.tflite` with metadata (labels), loaded from `app/src/main/assets/`.
 
-> The `.tflite` in the app comes from an earlier run of this same notebook. Each training run gives slightly different weights, so the notebook's single-image outputs can differ a little from the app's.
+> The app uses the `.tflite` exported by this notebook run. In Colab, `load_img` resizes with nearest-neighbour interpolation, while ML Kit on Android resizes more smoothly, so a borderline image can get a different label: `cell_parasitized_2.png` is *Uninfected* in Colab but *Parasitized* (63.5 %) in the app.
 
 | Test accuracy | Single-image prediction (`np.expand_dims` + `np.argmax`) |
 |---|---|
@@ -24,7 +24,7 @@ Workshop: *Mobile application for the recognition of medical images* (Lab 15) �
 |---|---|
 | ![Emulator, parasitized](docs/emulator_parasitized.png) | ![Emulator, uninfected](docs/emulator_uninfected.png) |
 
-- **◀ Back / Next ▶ / Label Image:** the 4 test images (2 per class, from the test set) in `res/drawable`. All 4 are classified correctly.
+- **◀ Back / Next ▶ / Label Image:** the 4 test images (2 per class, from the test set) in `res/drawable`. All 4 are classified correctly in the app.
 - **📷 Camera:** takes a photo with the phone camera and classifies it.
 - **🖼 Gallery:** picks an image with the Android photo picker (no permissions needed) and classifies it.
 
